@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+set -e
+
+if [ ! -d /usr/share ]; then
+  mkdir /usr/share
+fi
+
+git clone https://github.com/sstephenson/rbenv /usr/share/rbenv
+mkdir /usr/share/rbenv/plugins
+
+git clone https://github.com/sorah/rbenv-global-rehash /usr/share/rbenv/plugins/rbenv-global-rehash
+
+export RBENV_ROOT=/usr/share/rbenv
+export PATH=${RBENV_ROOT}/shims:${RBENV_ROOT}/bin:$PATH
+rbenv global-rehash /usr/bin
