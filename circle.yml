@@ -10,10 +10,13 @@ dependencies:
     - if [ ! -x bin/git-set-mtime ]; then curl -o bin/git-set-mtime https://drone.io/github.com/rosylilly/git-set-mtime/files/artifacts/bin/linux_amd64/git-set-mtime && chmod +x bin/git-set-mtime; fi
     - docker login -u "${DOCKER_USER}" -p "${DOCKER_PASSWORD}" -e "${DOCKER_EMAIL}" https://quay.io
 
+test:
+  override:
+    - bin/git-set-mtime
+    - ./build.sh
+
 deployment:
   production:
     branch: master
     commands:
-      - bin/git-set-mtime
-      - ./build.sh
       - ./push.sh
