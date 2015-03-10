@@ -11,8 +11,13 @@ fi
 set -x
 
 newver=$1
-tag=${2:-ruby-${newver}}
 headof=$3
+
+if [ -z $headof ]; then
+  headof=${newver:0:3}
+fi
+
+tag=${2:-ruby-${headof}}
 
 if [ ! -d $tag ]; then
   cp -R skel ${tag}

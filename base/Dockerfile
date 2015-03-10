@@ -4,7 +4,7 @@ MAINTAINER her@sorah.jp
 RUN rm -f /etc/env.d/10rubygems
 
 ADD rbenv.profile.sh /etc/env.d/10rubygems
-RUN echo 'dev-lang/ruby' >> /etc/portage/package.mask
+RUN echo 'dev-lang/ruby' >> /etc/portage/package.mask/ruby
 
 ADD setup-rbenv /usr/bin/setup-rbenv
 RUN /usr/bin/setup-rbenv

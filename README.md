@@ -7,8 +7,8 @@ Based on [sorah/gentoo-docker](https://github.com/sorah/gentoo-docker).
 - quay.io/sorah/gentoo-flavored:latest
   - quay.io/sorah/rbenv:base
     - quay.io/sorah/rbenv:ruby-build
-      - quay.io/sorah/rbenv:ruby-2.1 (ruby-2.1.5)
-      - quay.io/sorah/rbenv:ruby-2.2 (ruby-2.2.0)
+      - quay.io/sorah/rbenv:2.1
+      - quay.io/sorah/rbenv:2.2
 
 All ruby-* image have installed foreman and bundler.
 
