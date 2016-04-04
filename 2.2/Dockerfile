@@ -1,5 +1,5 @@
-FROM quay.io/sorah/rbenv:ruby-build
+ROM quay.io/sorah/rbenv:ruby-build
 MAINTAINER her@sorah.jp
 
-RUN /usr/bin/install-ruby 2.2.3
+RUN /usr/bin/install-ruby 2.2.4
 CMD /usr/bin/ruby
